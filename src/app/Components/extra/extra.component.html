@@ -1,0 +1,10 @@
+<div class="my-3">
+    <h4 [ngClass]="{'strike': !notes.status}">{{notes.title}}</h4>
+    <p>{{notes.about}}</p>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="notes{{i}}" (click)="done(notes)" [checked]="!notes.status">
+        <label class="form-check-label" for="notes{{i}}">Done</label>
+    </div>
+    <button class="btn btn-sm btn-danger" (click)="remove(notes)">remove</button>
+
+</div>

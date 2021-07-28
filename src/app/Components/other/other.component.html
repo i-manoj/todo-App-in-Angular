@@ -1,0 +1,7 @@
+<app-add (addNotes)="add($event)" ></app-add>
+<div *ngIf="this.other.length===0; else elseBlock">No notes found</div>
+<ng-template #elseBlock>
+    <div *ngFor="let notes of other; index as i">
+        <app-extra [notes]="notes"  (removeNotes)="delete($event)" (doneNotes)="done($event)"></app-extra>
+    </div>
+</ng-template>
